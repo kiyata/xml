@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://Improvement.nhs.uk/HealthcareCostingDataSet/MH/v0.2-1920" targetNamespace="http://Improvement.nhs.uk/HealthcareCostingDataSet/MH/v0.2-1920" elementFormDefault="qualified" attributeFormDefault="unqualified" version="HCDS MH schema extract Reconciliation v0.2 2019-20" xml:lang="EN">
+	<xs:include schemaLocation="HCDS_MH_schema_base_elements_v0.2_2019-20.xsd"/>
+	<xs:element name="HCDSExtract" type="ns:Extract"/>
+	<xs:complexType name="Extract">
+		<xs:sequence minOccurs="1">
+			<xs:element name="MessageHeader" type="ns:Message"/>
+			<xs:element name="FinalAuditedAccounts" type="ns:FinAuditedAcc"/>
+			<xs:element name="ServiceCostExclusions" type="ns:SerCostExclusions"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Message">
+		<xs:sequence>
+			<xs:element name="OrgSubmittingID" type="ns:OrgSubmittingID_Type" minOccurs="1"/>
+			<xs:element name="FinYr" type="ns:FinYear_Type" minOccurs="1"/>
+			<xs:element name="PeriodStartDate" type="ns:DateOfFinYear_Type" minOccurs="1"/>
+			<xs:element name="PeriodEndDate" type="ns:DateOfFinYear_Type" minOccurs="1"/>
+			<xs:element name="CreateDateTime" type="xs:dateTime" minOccurs="1"/>
+			<xs:element name="FeedType" type="ns:FeedMHREC_Type" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FinAuditedAcc">
+		<xs:sequence>
+			<xs:element name="Accts" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FinAccID" type="ns:FinalAccount_Type" minOccurs="1"/>
+						<xs:element name="CstIncVal" type="ns:Cost_Type" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SerCostExclusions">
+		<xs:sequence>
+			<xs:element name="Exclusions" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SerID" type="ns:ServiceID_Type" minOccurs="1"/>
+						<xs:element name="TotCst" type="ns:Cost_Type" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://Improvement.nhs.uk/HealthcareCostingDataSet/MH/v0.2-1920" targetNamespace="http://Improvement.nhs.uk/HealthcareCostingDataSet/MH/v0.2-1920" elementFormDefault="qualified" attributeFormDefault="unqualified" version="HCDS_MH_schema_base_elements_v0.2_2019-20" xml:lang="EN">
+	<xs:simpleType name="ActivityCnt_Type">
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActivityCntCosting_Type">
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActivityIdentifier_Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActivityStartDate_Type">
+		<xs:restriction base="xs:date">
+			<xs:maxInclusive value="2020-03-31"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Attendance_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ClusterStatus_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Cluster_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value=""/>
+			<xs:enumeration value="00"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="17"/>
+			<xs:enumeration value="18"/>
+			<xs:enumeration value="19"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CollectionActivityID_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BLD001"/>
+			<xs:enumeration value="COM001"/>
+			<xs:enumeration value="COM002"/>
+			<xs:enumeration value="COM003"/>
+			<xs:enumeration value="COM004"/>
+			<xs:enumeration value="DEN001"/>
+			<xs:enumeration value="DIM001"/>
+			<xs:enumeration value="DIM002"/>
+			<xs:enumeration value="DIM003"/>
+			<xs:enumeration value="DIM004"/>
+			<xs:enumeration value="DIM005"/>
+			<xs:enumeration value="DIM006"/>
+			<xs:enumeration value="DIM007"/>
+			<xs:enumeration value="DIM008"/>
+			<xs:enumeration value="DIM009"/>
+			<xs:enumeration value="DIM010"/>
+			<xs:enumeration value="DIM011"/>
+			<xs:enumeration value="EMC001"/>
+			<xs:enumeration value="MDT001"/>
+			<xs:enumeration value="ODT001"/>
+			<xs:enumeration value="ODT002"/>
+			<xs:enumeration value="ODT003"/>
+			<xs:enumeration value="ODT004"/>
+			<xs:enumeration value="ODT005"/>
+			<xs:enumeration value="ODT006"/>
+			<xs:enumeration value="ODT007"/>
+			<xs:enumeration value="ODT008"/>
+			<xs:enumeration value="GRP001"/>
+			<xs:enumeration value="OUT001"/>
+			<xs:enumeration value="OUT002"/>
+			<xs:enumeration value="OUT003"/>
+			<xs:enumeration value="OUT004"/>
+			<xs:enumeration value="OUT005"/>
+			<xs:enumeration value="PAT001"/>
+			<xs:enumeration value="PAT002"/>
+			<xs:enumeration value="PAT003"/>
+			<xs:enumeration value="PAT004"/>
+			<xs:enumeration value="PAT005"/>
+			<xs:enumeration value="PAT006"/>
+			<xs:enumeration value="PAT007"/>
+			<xs:enumeration value="PHA003"/>
+			<xs:enumeration value="PHA004"/>
+			<xs:enumeration value="PHA005"/>
+			<xs:enumeration value="PHA006"/>
+			<xs:enumeration value="RAD002"/>
+			<xs:enumeration value="SPS001"/>
+			<xs:enumeration value="SPS003"/>
+			<xs:enumeration value="SPS004"/>
+			<xs:enumeration value="THR001"/>
+			<xs:enumeration value="THR002"/>
+			<xs:enumeration value="THR003"/>
+			<xs:enumeration value="WRD001"/>
+			<xs:enumeration value="SUP001"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CollectionResourceID_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CPF001"/>
+			<xs:enumeration value="CPF002"/>
+			<xs:enumeration value="CPF005"/>
+			<xs:enumeration value="CPF011"/>
+			<xs:enumeration value="CPF017"/>
+			<xs:enumeration value="CPF022"/>
+			<xs:enumeration value="CPF023"/>
+			<xs:enumeration value="CPF024"/>
+			<xs:enumeration value="CPF027"/>
+			<xs:enumeration value="CPF028"/>
+			<xs:enumeration value="CPF029"/>
+			<xs:enumeration value="CPF030"/>
+			<xs:enumeration value="CPF031"/>
+			<xs:enumeration value="CPF032"/>
+			<xs:enumeration value="CPF033"/>
+			<xs:enumeration value="CSC004"/>
+			<xs:enumeration value="CSC005"/>
+			<xs:enumeration value="CSC006"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Cost_Type">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="18"/>
+			<xs:fractionDigits value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DateClusterEnd_Type">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:date">
+					<xs:minInclusive value="2019-04-01"/>
+					<xs:maxInclusive value="2020-03-31"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value=""/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="DateClusterStart_Type">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:date">
+					<xs:maxInclusive value="2020-03-31"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value=""/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="DateOfFinYear_Type">
+		<xs:restriction base="xs:date">
+			<xs:minInclusive value="2019-04-01"/>
+			<xs:maxInclusive value="2020-03-31"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Episode_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FeedMHCare_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MHCC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FeedMHProvSpell_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MHPS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FeedMHREC_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MHREC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FinalAccount_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EXP0240"/>
+			<xs:enumeration value="EXP0370"/>
+			<xs:enumeration value="EXP0375"/>
+			<xs:enumeration value="INC1230A"/>
+			<xs:enumeration value="INC1230B"/>
+			<xs:enumeration value="INC1240A"/>
+			<xs:enumeration value="INC1240B"/>
+			<xs:enumeration value="INC1250A"/>
+			<xs:enumeration value="INC1250B"/>
+			<xs:enumeration value="INC1260A"/>
+			<xs:enumeration value="INC1260B"/>
+			<xs:enumeration value="INC1260C"/>
+			<xs:enumeration value="INC1310"/>
+			<xs:enumeration value="INC1370"/>
+			<xs:enumeration value="INC1430G"/>
+			<xs:enumeration value="NFAAIR"/>
+			<xs:enumeration value="OEADJ01"/>
+			<xs:enumeration value="OEADJ02"/>
+			<xs:enumeration value="OEADJ03"/>
+			<xs:enumeration value="OEADJ04"/>
+			<xs:enumeration value="OEADJ05"/>
+			<xs:enumeration value="OEADJ06"/>
+			<xs:enumeration value="OEADJ07"/>
+			<xs:enumeration value="OEADJ08"/>
+			<xs:enumeration value="SCI0110A"/>
+			<xs:enumeration value="SCI0125A"/>
+			<xs:enumeration value="SCI0150"/>
+			<xs:enumeration value="SCI0160"/>
+			<xs:enumeration value="SCI0170"/>
+			<xs:enumeration value="SCI0200"/>
+			<xs:enumeration value="SCI0230"/>
+			<xs:enumeration value="SOC0100"/>
+			<xs:enumeration value="SOC0160"/>
+			<xs:enumeration value="SOC0170"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FinYear_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FY2019-20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OrganisationID_Type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OrgSubmittingID_Type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z0-9]{3,5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ServiceID_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EXC000"/>
+			<xs:enumeration value="EXC001"/>
+			<xs:enumeration value="EXC002"/>
+			<xs:enumeration value="EXC003"/>
+			<xs:enumeration value="EXC007"/>
+			<xs:enumeration value="EXC008"/>
+			<xs:enumeration value="EXC009"/>
+			<xs:enumeration value="EXC010"/>
+			<xs:enumeration value="EXC011"/>
+			<xs:enumeration value="EXC012"/>
+			<xs:enumeration value="EXC013"/>
+			<xs:enumeration value="EXC015"/>
+			<xs:enumeration value="EXC016"/>
+			<xs:enumeration value="EXC017"/>
+			<xs:enumeration value="EXC018"/>
+			<xs:enumeration value="EXC019"/>
+			<xs:enumeration value="EXC023"/>
+			<xs:enumeration value="EXC029"/>
+			<xs:enumeration value="EXC030"/>
+			<xs:enumeration value="EXC031"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UniqueID_Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

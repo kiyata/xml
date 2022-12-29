@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://Improvement.nhs.uk/HealthcareCostingDataSet/v2.0-2021" targetNamespace="http://Improvement.nhs.uk/HealthcareCostingDataSet/v2.0-2021" elementFormDefault="qualified" attributeFormDefault="unqualified" version="HCDS schema extract Mental Health CareContacts" xml:lang="EN">
+	<xs:include schemaLocation="HCDS_schema_base_elements_v2.0_2020-21.xsd"/>
+	<xs:element name="HCDSExtract" type="ns:Extract"/>
+	<xs:complexType name="Extract">
+		<xs:sequence minOccurs="1">
+			<xs:element name="MessageHeader" type="ns:Message"/>
+			<xs:element name="MessageBody" type="ns:ActivityRecords"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Message">
+		<xs:sequence>
+			<xs:element name="OrgSubmittingID" type="ns:OrgSubmittingID_Type" minOccurs="1"/>
+			<xs:element name="FinYr" type="ns:FinYear_Type" minOccurs="1"/>
+			<xs:element name="PeriodStartDate" type="ns:DateOfFinYear_Type" minOccurs="1"/>
+			<xs:element name="PeriodEndDate" type="ns:DateOfFinYear_Type" minOccurs="1"/>
+			<xs:element name="CreateDateTime" type="xs:dateTime" minOccurs="1"/>
+			<xs:element name="FeedType" type="ns:Feed_Type" minOccurs="1"/>
+			<xs:element name="NoOfActivityRecords" type="ns:ActivityCnt_Type" minOccurs="1"/>
+			<xs:element name="TotalCosts" type="ns:Cost_Type" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ActivityRecords">
+		<xs:sequence>
+			<xs:element name="Activity" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OrgId" type="ns:OrganisationID_Type" minOccurs="1"/>
+						<xs:element name="PLEMI" type="ns:UniquePatientID_Type" nillable="true" minOccurs="1"/>
+						<xs:element name="SerReqID" type="ns:UniqueID_Type" minOccurs="1"/>
+						<xs:element name="CareId" type="ns:UniqueID_Type" minOccurs="1"/>
+						<xs:element name="CareDte" type="ns:DateOfFinYear_Type" minOccurs="1"/>
+						<xs:element name="Attendance" type="ns:Attendance_Type" minOccurs="1"/>
+						<xs:element name="PatCAS" type="ns:CareStatus_Type" minOccurs="1"/>
+						<xs:element name="Cluster" type="ns:Cluster_Type" nillable="true" minOccurs="1"/>
+						<xs:element name="CstActivity" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ActCstID" type="ns:CollectionActivityID_Type" minOccurs="1"/>
+									<xs:element name="ActCnt" type="ns:ActivityCntCosting_Type" minOccurs="1"/>
+									<xs:element name="Resource" minOccurs="1" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="ResCstID" type="ns:CollectionResourceID_Type" minOccurs="1"/>
+												<xs:element name="TotCst" type="ns:Cost_Type" minOccurs="1"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

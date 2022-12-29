@@ -1,0 +1,13 @@
+{
+    "activity": {
+      "min-resources": "1",
+      "max-resources": "1",
+      "min-costs": "4",
+      "max-costs": "4"
+    },
+    "plics" : {
+      "xml-schema-path" : "resources/schemas-2020",
+      "xml-file-version" : "v1.0_2019-20",
+      "xmlns-ns" : "v1.0-1920"
+    }
+}

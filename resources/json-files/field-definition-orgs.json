@@ -1,0 +1,28 @@
+{
+  "ALL" : {
+
+  },
+  "EC" : {
+    "HRG" : ["VB01Z","VB02Z"],
+    "DepTyp" : ["01","02"]
+  },
+  "APC" : {
+    "Pod" : ["RP","DC"],
+    "Tfc" : ["100","101"],
+    "HrgFce" : ["DZ13A","AA22C"],
+    "EpType" : ["1","2"]
+  },
+  "OP" : {
+    "Pod" : ["OPROC","CL"],
+    "Tfc" : ["200"],
+    "HRG" : ["WF01A"]
+  },
+  "SWC" : {
+    "CCUF" : ["01","02"],
+    "UnHRG" : ["XC01Z","UZ01Z"],
+    "CCPerType" : ["1", "2"]
+  },
+  "SI" : {
+    "UnCur" : ["RD01A","RD02Z"]
+  }
+}

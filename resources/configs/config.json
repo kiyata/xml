@@ -1,0 +1,8 @@
+{
+  "activity": {
+    "min-resources": "1",
+    "max-resources": "5",
+    "min-costs": "1",
+    "max-costs": "1"
+  }
+}
